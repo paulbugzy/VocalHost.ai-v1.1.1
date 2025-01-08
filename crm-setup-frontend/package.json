@@ -1,0 +1,12 @@
+{
+      "scripts": {
+            "docs": "node scripts/generate-docs.js",
+            "test:disaster-recovery": "artillery run tests/disaster-recovery.test.js",
+            "monitor:canary": "kubectl apply -f monitoring/canary-dashboard.yaml",
+            "rollback:check": "./scripts/auto-rollback.sh",
+            "recovery:test": "./scripts/disaster-recovery.sh"
+      },
+      "dependencies": {
+            "@stripe/stripe-js": "^5.5.0"
+      }
+}

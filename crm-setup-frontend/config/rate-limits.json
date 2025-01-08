@@ -1,0 +1,30 @@
+{
+      "default": {
+        "windowMs": 900000, // 15 minutes
+        "max": 100
+      },
+      "clover": {
+        "windowMs": 60000, // 1 minute
+        "max": 30,
+        "message": "Too many requests to Clover API",
+        "skip": ["127.0.0.1"]
+      },
+      "twilio": {
+        "windowMs": 60000, // 1 minute
+        "max": 10,
+        "message": "Too many requests to Twilio API",
+        "keyGenerator": "ip+user"
+      },
+      "openai": {
+        "windowMs": 60000, // 1 minute
+        "max": 5,
+        "message": "Too many requests to OpenAI API",
+        "keyGenerator": "ip+apiKey"
+      },
+      "feature-flags": {
+        "windowMs": 60000, // 1 minute
+        "max": 10,
+        "message": "Too many feature flag requests",
+        "skip": ["internal-service"]
+      }
+    }

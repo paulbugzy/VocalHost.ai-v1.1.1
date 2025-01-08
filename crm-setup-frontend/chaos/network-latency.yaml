@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+    kind: NetworkChaos
+    metadata:
+      name: network-latency-test
+      namespace: default
+    spec:
+      action: delay
+      mode: one
+      selector:
+        namespaces:
+          - crm-platform
+      delay:
+        latency: '100ms'
+        correlation: '100'
+        jitter: '50ms'
+      duration: '5m'
